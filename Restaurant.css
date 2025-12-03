@@ -712,271 +712,678 @@ h1{
     margin-top: 40px;
     margin-bottom: 60px;
 }
-@media (max-width: 768px) {
-    .testimonialsContainer {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+@media (max-width: 325px) {
+    body{
+        display: grid;
+        max-width: 325px;
+        object-fit: cover;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 545px;
+        grid-template-rows: repeat(2, 100px);
+    }
+    
+    .navLeft {
+        grid-row: 1/2;
+        justify-content: center;
+        
+    }
+    
+    .homepageLogo {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .navRight {
+        grid-row: 2/3;
+    }
+    
+    .navButton {
+        font-size: 20px;
+        padding: 5px 8px;
+        min-width: 70px;
+        text-align: center;
+    }
+    .homepageHero {
+        height: 60vh;
+        padding: 20px 10px;
+    }
+    
+    .homepageHeader h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+    
+    .heroContent {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .heroTagline {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .heroDescription {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .heroButtons {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 20px;
+        align-items: center;
+    }
+    .textContainer{
+        margin-bottom: 20px;
+    }
+    .contentOverlay{
+        row-gap: 10px;
+    }
+    .title{
+        font-size: 25px;
+    }
+    
+    .heroButton {
+        padding: 10px 20px;
+        font-size: 20px;
+        width: 90%;
+    }
+    .hoursContainer{
+        margin-top: 20px;
+        max-width: 410px;
+    }
+    
+    .contentOverlay {
+        padding: 20px 10px;
+        margin: 0 10px 20px 10px;
+    }
+    
+    .textContentContainer {
+        flex-direction: column;
         gap: 20px;
+        padding: 0 5px;
     }
-    .testimonialsTitle {
-        font-size: 36px;
+    
+    .text, .feat {
+        font-size: 14px;
+        padding: 15px;
+        margin: 15px auto;
     }
-    .testimonialsSubtitle {
+    .about h1{
+        font-size:28px ;
+        margin-top: 10px;
+    }
+    .desc{
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    .title, .featTitle, .hoursTitle, .contactTitle {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .hoursText {
+        font-size: 14px;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 28px;
+        margin: 20px 0;
+    }
+    
+    .foods h2, .drinks h2, .desserts h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .menuGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .items {
+        padding: 15px;
+    }
+    
+    .price {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    .about {
+        font-size: 28px;
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+    .contactSection {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .contactColumn {
+        padding: 15px;
+    }
+    
+    .contactColumn h3 {
         font-size: 18px;
     }
-    .overallRating,
-    .addTestimonial {
-        width: 90%;
-        padding: 25px;
+    
+    .contactColumn p {
+        font-size: 14px;
     }
-}
-@media (max-width: 425px) {
+    .testimonialsTitle {
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+    }
+    
+    .testimonialsSubtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
     .testimonialsContainer {
         grid-template-columns: 1fr;
         gap: 15px;
+        padding: 0 10px;
+        margin-bottom: 30px;
     }
-    .testimonialsTitle {
-        font-size: 30px;
-    }
+    
     .testimonialCard {
-        padding: 20px;
+        padding: 15px;
     }
+    
     .testimonialAvatar {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
+    
+    .testimonialName {
+        font-size: 16px;
+    }
+    
+    .testimonialText {
+        font-size: 13px;
+    }
+    
+    .overallRating, .addTestimonial {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    
     .overallRating h2 {
-        font-size: 24px;
+        font-size: 20px;
     }
+    
     .ratingNumber {
-        font-size: 30px;
+        font-size: 24px;
+    }  
+    .shareButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .footer {
+        max-width: 575px;
+        font-size: 20px;
+    }
+    
+    .footerInner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footerLogo {
+        height: 45px;
+        width: 45px;
+    }
+    
+    .footer h4 {
+        font-size: 14px;
+    }
+    
+    .footerLegal {
+        font-size: 11px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .legalLinks {
+        justify-content: center;
     }
 }
-@media (max-width: 320px) {
+@media (min-width: 326px) and (max-width: 375px) {
+    body{
+        display: grid;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 100px);
+    }
+    
+    .navLeft {
+        grid-row: 1 / 2;
+        justify-content: center;
+    }
+    
+    .navRight {
+        grid-row: 2 / 3;
+        justify-content: center;
+    }
+    
+    .navButton {
+        font-size: 30px;
+        padding: 6px 12px;
+        min-width: 75px;
+    }
+    
+    .homepageLogo {
+        height: 55px;
+        width: 55px;
+    }
+    .homepageHeader h1 {
+        font-size: 32px;
+    }
+    
+    .heroTagline {
+        font-size: 20px;
+    }
+    
+    .heroDescription {
+        font-size: 16px;
+    }
+    
+    .heroButton {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+    
+    .text, .feat {
+        font-size: 16px;
+    }
+    .desc{
+        font-size: 60px;
+    }
+    h1, .about {
+        font-size: 70px;
+    }
+    .contactSection{
+        margin-bottom: 20px;
+        margin-top: 80px;
+    }
+    #content{
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
+    .footer{
+        margin-top: 270px;
+        margin-bottom: 0px;
+        font-size: 25px;
+    }
+    .foods h2, .drinks h2, .desserts h2 {
+        font-size: 26px;
+    }
     .testimonialsTitle {
         font-size: 26px;
     }
+    
     .testimonialsSubtitle {
-        font-size: 16px;
-    }
-    .testimonialName {
-        font-size: 18px;
-    }
-    .testimonialText {
         font-size: 15px;
     }
-    .overallRating,
-    .addTestimonial {
-        padding: 20px;
-    }
 }
-@media (max-width: 768px){
-    nav{
+@media (min-width: 376px) and (max-width: 425px) {
+    body{
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
-
+        grid-template-columns: 485px;
+        max-width: 425px;
+       
     }
-    .navLeft{
-        grid-column: 1/2;
-    }
-    .navRight{
-        margin-left: 140px;
-        grid-column: 2/6;
-    }
-    .navButton{
-        font-size: 16px;
-        padding: 10px 18px;
-    }
-    .footerInner{
-        grid-template-columns: 1fr;
-    }
-    .footerLegal{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .homepageHeader{
-        flex-direction: column;
-        text-align: center;
-    }
-    .homepageHeader h1{
-        font-size: 40px;
-    }
-    .homepageImage{
-        height: 320px;
-    }
-    .textContentContainer{
-        flex-direction: column;
-        padding: 0 10px;
-    }
-    .text,
-    .textContainer,
-    .featuresContainer,
-    .feat{
-        padding: 24px;
-    }
-    .hoursContainer,
-    .contactSection,
-    .menuGrid{
-        width: 95%;
-        padding: 0 10px;
-    }
-    .contactSection{
-        flex-direction: column;
-        gap: 20px;
-    }
-    .menuGrid{
-        grid-template-columns: 1fr;
-    }
-    .contactColumn{
-        padding: 24px;
-    }
-    h1{
-        font-size: 40px;
-    }
-    .about{
-        font-size: 40px;
-    }
-    .contactTitle{
-        font-size: 36px;
-    }
-    .footer{
-        padding: 40px 16px 24px;
-    }
-}
-@media (max-width: 425px) {
-    nav{
+    nav {
         display: grid;
-        grid-template-columns:  repeat(4,1fr);
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        width: 100vw;
-    }
-    .navLeft{
-        grid-row:1/2;
-        grid-column: 2/3;
-        margin-left: 50px;
-    }
-    .navRight{
-        grid-row: 2/3;
-        grid-column: 1/-1;
-        margin-left: 0;
+        max-width: 425px;
+        margin-right: 100px;
     }
     
-    .homepageHeader{
-        flex-direction: column;
-        text-align: center;
+    .navRight {
+        grid-row: 2/3;
     }
-    .homepageHeader h1{
-        font-size:30px;
+    .navLeft{
+        grid-row: 1/2;
+        justify-content: center;
     }
-    .homepageHeader img{
-        height: 180px;
-        width: 200px;
+    .navButton {
+        font-size: 12px;
+        padding: 8px 15px;
     }
-    .homepageImage{
-        height: 260px;
-    }
-    .text,
-    .textContainer,
-    .featuresContainer,
-    .feat,
-    .hoursContainer,
-    .contactColumn{
-        padding: 20px;
-    }
-    .text{
-        font-size: 18px;
-    }
-    .feat,
-    .featTitle,
-    .hoursTitle,
-    .contactTitle{
-        font-size: 22px;
-    }
-    .hoursText{
-        font-size: 18px;
-    }
-    .footerLogo{
+    
+    .homepageLogo {
         height: 60px;
         width: 60px;
     }
-    .footerLegal{
+    .homepageHeader h1 {
+        font-size: 36px;
+    }
+    
+    .heroContent {
+        width: 95%;
+    }
+    
+    .heroTagline {
+        font-size: 22px;
+    }
+    
+    .heroDescription {
+        font-size: 17px;
+    }
+    
+    .heroButtons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .heroButton {
+        min-width: 180px;
+    }  
+    .textContentContainer {
+        flex-direction: column;
+    }
+    .text, .feat, .desc {
+        font-size: 17px;
+    }
+    .menuGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .testimonialsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    #content{
+        object-fit: cover;
+    }
+    .about{
+        font-size: 25px;
+    }
+    .contactTitle{
+        font-size: 25px;
+    }
+    .contactColumn h3{
+        font-size: 15px;
+    }
+    .contactColumn p{
         font-size: 12px;
     }
 }
-@media (max-width: 375px){
+@media (min-width: 426px) and (max-width: 768px) {
     nav{
-        align-items: center;
+        max-width: 768px;
     }
-    .navRight{
-        justify-content: center;
-        gap: 6px;
+    .navButton {
+        font-size: 14px;
+        padding: 10px 20px;
     }
-    .navButton{
-        font-size:10px;
-        padding: 6px 10px;
+    
+    .homepageLogo {
+        height: 70px;
+        width: 70px;
     }
-    .homepageHeader{
-        flex-direction: column;
-        text-align: center;
+    .homepageHeader h1 {
+        font-size: 48px;
     }
-    .homepageHeader h1{
-        font-size:25px;
+    
+    .heroContent {
+        width: 90%;
     }
-    .homepageHeader img{
-        height: 150px;
-        width:180px;
+    
+    .heroTagline {
+        font-size: 26px;
     }
-    .text p{
-        font-size:10px;
+    
+    .heroDescription {
+        font-size: 19px;
     }
-    .feat p{
-        font-size:10px;
+    
+    .textContentContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    .featTitle{
-        font-size: 13px;
+    .textContainer, .featuresContainer {
+        flex: 1 1 300px;
+    }
+    .text, .feat, .desc {
+        font-size: 18px;
+    }
+    .menuGrid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .about, h1 {
+        font-size: 48px;
+    }
+    .contactSection {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .contactColumn {
+        flex: 1 1 300px;
+    }
+    .testimonialsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .testimonialsTitle {
+        font-size: 40px;
+    }
+    .footerInner {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 320px){
-    nav{
-        flex-direction: column;
-        gap: 6px;
+@media (min-width: 2560px) {
+    body {
+        max-width: 2560px;
+        margin: 0 auto;
     }
-    .homepageLogo{
-        height: 60px;
-        width: 60px;
+    nav {
+        max-width: 1800px;
+        padding: 20px 50px;
     }
     .navButton{
+        font-size: 22px;
+        padding: 18px 36px;
+        border-radius: 16px;
+    }
+    .homepageLogo{
+        height: 100px;
         width: 100px;
-        font-size: 10px;
-        padding: 4px 10px;
     }
-    .homepageImage{
-        height: 200px;
+    .homepageHero {
+        height: 80vh;
     }
-    .text,
-    .textContainer,
-    .featuresContainer,
-    .feat{
-        padding: 16px;
+    
+    .homepageHeader h1 {
+        font-size: 96px;
     }
-    .text{
-        font-size: 14px;
+    .heroContent {
+        width: 1200px;
     }
-    .feat{
-        font-size: 14px;
+    .heroTagline{
+        font-size: 42px;
     }
-    .hoursTitle,
-    .contactTitle{
-        font-size: 20px;
+    .heroDescription{
+        font-size: 28px;
+    }
+    .heroButton{
+        padding: 25px 50px;
+        font-size: 24px;
+        border-radius: 16px;
+    }
+    .contentOverlay{
+        max-width: 1800px;
+        margin: 0 auto 60px auto;
+        padding: 60px;
+    }
+    .textContentContainer{
+        max-width: 1600px;
+        gap: 50px;
+    }
+    .text, .feat, .desc{
+        font-size: 28px;
+        padding: 40px;
+    }
+    .title, .featTitle, .hoursTitle, .contactTitle{
+        font-size: 47px;
+    }
+    .hoursText{
+        font-size: 27px;
+    }
+    h1, .about {
+        font-size: 70px;
+    }
+    .foods h2, .drinks h2, .desserts h2{
+        font-size: 50px;
+    }
+    .menuGrid{
+        max-width: 1800px;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 50px;
+        padding: 50px;
+    }
+    .items{
+        padding: 40px;
+        border-radius: 20px;
+    }
+    .items img{
+        height: 300px;
+    }
+    .price{
+        font-size: 28px;
+        padding: 12px 24px;
+        border-radius: 30px;
+    }
+    .desc{
+        max-width: 1200px;
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+    .contactSection{
+        max-width: 1600px;
+        gap: 60px;
     }
     .contactColumn{
-        padding: 16px;
+        padding: 50px;
+        border-radius: 20px;
+    }
+    .contactColumn h3{
+        font-size: 36px;
+    }
+    .contactColumn p{
+        font-size: 24px;
+    }
+    .testimonialsTitle {
+        font-size: 60px;
+    }
+    .testimonialsSubtitle{
+        font-size: 28px;
+        max-width: 1000px;
+    }
+    .testimonialsContainer{
+        max-width: 1800px;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 40px;
+    }
+    .testimonialCard{
+        padding: 40px;
+        border-radius: 20px;
+    }
+    .testimonialAvatar{
+        width: 80px;
+        height: 80px;
+    }
+    .testimonialName{
+        font-size: 26px;
+    }
+    .testimonialText{
+        font-size: 20px;
+    }
+    .starRating{
+        font-size: 22px;
+    }
+    .overallRating, .addTestimonial{
+        max-width: 1000px;
+        padding: 60px;
+        border-radius: 20px;
+    }
+    .overallRating h2{
+        font-size: 36px;
+    }
+    .ratingNumber{
+        font-size: 48px;
+    }
+    .overallStars{
+        font-size: 32px;
+    }
+    .shareButton{
+        padding: 20px 50px;
+        font-size: 22px;
+        border-radius: 16px;
+    }
+    .footer{
+        padding: 100px 50px 45px 50px;
+        margin-bottom: 0;
+    }
+    .footerInner{
+        max-width: 1800px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
     }
     .footerLogo{
-        height: 48px;
-        width: 48px;
+        height: 90px;
+        width: 90px;
     }
     .footer h4{
-        font-size: 16px;
+        font-size: 26px;
+    }
+    .footerSlogan{
+        font-size: 20px;
+    }
+    .footerContact a, .footerLinks a, .footerHours li{
+        font-size: 18px;
+    }
+    .footerLegal{
+        max-width: 1800px;
+        padding-top: 40px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 768px) {
+    .navButton{
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .heroButton{
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .shareButton{
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .testimonialsContainer{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .menuGrid{
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
