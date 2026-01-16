@@ -9,3 +9,6 @@ function add(food , price){
         cart.push({name : food, cost: price, amount: 1});
     }
 }
+function remove(foodName){
+    cart= cart.filter(foods => foods.name !== foodName);
+}
