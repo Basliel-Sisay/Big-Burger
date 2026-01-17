@@ -1433,9 +1433,9 @@ h1{
     background: rgb(44, 62, 80);
     color: white;
     border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 36px;
+    height: 28px;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1513,4 +1513,142 @@ h1{
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
+.checkoutContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+.checkoutLeft, .checkoutRight{
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(255, 240, 230);
+}
+.checkoutLeft h2, .checkoutRight h2 {
+    color: rgb(255, 107, 53);
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#checkoutItemsList {
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+.checkoutItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+.checkoutItem:last-child {
+    border-bottom: none;
+}
+.checkoutItemInfo {
+    flex: 1;
+}
+.checkoutItemInfo strong{
+    display: block;
+    color: rgb(44, 62, 80);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.checkoutItemInfo small{
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+}
+.checkoutItemPrice{
+    font-weight: bold;
+    color: rgb(255, 107, 53);
+    font-size: 16px;
+}
+.checkoutTotal{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid rgb(224, 224, 224);
+}
+.formGroup{
+    margin-bottom: 20px;
+}
+.formGroup label{
+    display: block;
+    color: rgb(44, 62, 80);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.formGroup select{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+.formGroup select:focus{
+    outline: none;
+    border-color: rgb(255, 107, 53);
+}
+.formGroup input, 
+.formGroup textarea{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+.formGroup input:focus,
+.formGroup textarea:focus{
+    outline: none;
+    border-color: rgb(255, 107, 53);
+}
+.formGroup textarea{
+    resize: vertical;
+    min-height: 80px;
+}
+.checkoutButtons{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+.cancelButton, .submitButton{
+    flex: 1;
+    padding: 15px 24px;
+    border: none;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cancelButton{
+    background: rgb(240, 240, 240);
+    color: rgb(100, 100, 100);
+}
+.cancelButton:hover{
+    background: rgb(220, 220, 220);
+}
+.submitButton{
+    background: rgb(255, 107, 53);
+    color: white;
+}
+.submitButton:hover{
+    background: rgb(230, 85, 35);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px){
+    .checkoutContainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

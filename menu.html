@@ -6,6 +6,7 @@
     <title>Big Burger - Menu</title>
     <link rel="shortcut icon" href="https://i.ibb.co/Q7H3fyx5/logo.png" type="Big Burger Icon">
     <link rel="stylesheet" href="Restaurant.css">
+    <script defer src="cart.js"></script>
 </head>
 <body>
     <header>
@@ -167,7 +168,7 @@
         <div class="contianer">
             <div class="empty" id="empty">
                 <p>Your cart is empty</p>
-                <p>Select items from the menu above</p>
+                <p>Select foods or drinks or desserts from the menu above</p>
             </div>
             <div class="itemsList" id="itemsList"></div>
             <div class="total">
@@ -227,5 +228,34 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addButtons = document.querySelectorAll('.addToOrder');
+            addButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemDiv = this.closest('.items');
+                    const priceElement = itemDiv.querySelector('.price');
+                    const priceText = priceElement.textContent;
+                    const parts = priceText.split(' - ');
+                    const foodName = parts[0].trim();
+                    const priceStr = parts[1].replace(' Birr', '').trim();
+                    const price = parseFloat(priceStr);
+                    add(foodName, price);
+                    update();
+                });
+            });
+            const clearButton = document.querySelector('.clear');
+            if(clearButton) {
+                clearButton.addEventListener('click', clear);
+            }
+            const submitButton = document.querySelector('.submit');
+            if(submitButton) {
+                submitButton.addEventListener('click', submitOrder);
+            }
+            // Load cart from storage on page load
+            loadCartFromStorage();
+            update();
+        });
+    </script>
 </body>
 </html>

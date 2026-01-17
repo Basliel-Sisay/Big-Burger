@@ -60,11 +60,19 @@
                         <textarea id="address" name="address" rows="3" required></textarea>
                     </div>
                     <div class="formGroup">
+                        <label for="del">choose delivery partner</label>
+                        <select id="delivery" name="Delivery partners">
+                            <option>Yegna Delivery</option>
+                            <option>ZMall Express</option>
+                            <option>Beu Delivery</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
                         <label for="notes">Special Instructions</label>
                         <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions for the delivery"></textarea>
                     </div>
                     <div class="checkoutButtons">
-                        <button type="button" onclick="window.location.href='menu.html'" class="cancelButton">Back to Menu</button>
+                        <button type="button" onclick="window.location.href='menu.html'" class="cancelButton">Go back to menu</button>
                         <button type="submit" class="submitButton">Place Order</button>
                     </div>
                 </form>

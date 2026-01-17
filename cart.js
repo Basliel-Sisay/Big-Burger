@@ -96,7 +96,7 @@ function update(){
 }
 function submitOrder() {
     if (cart.length === 0) {
-        alert('Please add foods/drinks/dessert to your order first');
+        alert('Please add foods or drinks or dessert to your order first');
         return;
     }
     saveCartToStorage();
