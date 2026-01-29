@@ -73,15 +73,42 @@ function change (food, changes){
     });
   };
 function clear(){
-    if (window.confirm('Are you sure you want to clear the cart?')) {
-      setCart([]);
-      localStorage.removeItem('cart');
-      localStorage.removeItem('cartTotal');
-    }
-  };
+toast((t) => (
+  <div style={{display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center'}}>
+    <span>Are you sure you want to clear the cart?</span>
+    <div style={{ display: 'flex', gap: '16px' }}>
+      <button onClick={() => {
+            setCart([]);
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartTotal');
+            toast.dismiss(t.id);
+            toast.success('Cart cleared', {duration: 700});
+          }}
+          style={{
+            background: ' rgb(182, 44, 29)',
+            color: 'white',
+            border: 'none',
+            padding: '8px 16px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+          }}
+        >
+          Yes clear</button>
+        <button onClick={() => toast.dismiss(t.id)}  style={{background: 'rgb(127, 140, 141)',  color: 'white', border: 'none',  padding: '8px 16px',  borderRadius: '6px', cursor: 'pointer',}}>Cancel</button>
+      </div>
+    </div>
+  ), {
+    duration: Infinity, 
+    position: 'top-center',
+    style: { background: 'rgb(44, 62, 80)', color: 'white', padding: '16px'},
+  });
+};
 function submitOrder(){
     if (cart.length === 0) {
-      alert('Please add foods or drinks or dessert to your order first');
+      toast.error('Please add foods, drinks or desserts to your order first',{
+      duration: 3000,
+      style: { background: 'rgb(192, 57, 43)', color: 'white' }
+      });
       return;
     }
     navigate('/checkout');

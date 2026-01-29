@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
+import toast from 'react-hot-toast';
 import './App.css';
 function Checkout(){
 useEffect(() => {
@@ -38,7 +39,15 @@ const formData = {
     items: cart,
     total: totalVal,
 };
-    alert("Order placed successfully\n\nTotal: " + totalVal.toFixed(2) + " Birr\n\nYour order will be delivered soon.");
+toast.success("Order placed successfully\nTotal: " + totalVal.toFixed(2) + " Birr\nYour order will be delivered soon",{
+  duration: 5000,
+  style: {
+    background: ' rgb(28, 158, 82)',
+    color: 'white',
+    whiteSpace: 'pre-line', 
+  },
+  iconTheme: { primary: 'white', secondary: '#27ae60' }
+});
     localStorage.removeItem('cart');
     setCart([]);
     navigate('/');
@@ -103,7 +112,7 @@ let cartItemsDisplay;
               </div>
               <div className="formGroup">
                 <label htmlFor="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone number" placeholder="Please Enter Phone number" required />
+                <input type="tel" id="phone" name="phone number" placeholder="Please Enter Phone number" min={10} max={10} required />
               </div>
               <div className="formGroup">
                 <label htmlFor="email">Email</label>
