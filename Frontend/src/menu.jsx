@@ -47,9 +47,9 @@ function add(food, price) {
         icon,
         duration: 2200,
         style: {
-          borderRadius: '10px',
-          background: 'rgb(50, 53, 51)',
-          color: 'white',
+        borderRadius: '10px',
+        background: 'rgb(50, 53, 51)',
+        color: 'white',
         },
       });
       return newCart;
