@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import './App.css';
 function Checkout(){
+useEffect(() => {
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+}, []);
 const navigate = useNavigate();
 const [cart, setCart] = useState([]);
 useEffect(() => {
