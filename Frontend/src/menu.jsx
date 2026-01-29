@@ -73,6 +73,7 @@ function change (food, changes){
     });
   };
 function clear(){
+if(cart.length !==0){
 toast((t) => (
   <div style={{display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center'}}>
     <span>Are you sure you want to clear the cart?</span>
@@ -102,6 +103,7 @@ toast((t) => (
     position: 'top-center',
     style: { background: 'rgb(44, 62, 80)', color: 'white', padding: '16px'},
   });
+}
 };
 function submitOrder(){
     if (cart.length === 0) {
