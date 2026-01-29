@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './App.css'; 
-
+import toast from 'react-hot-toast';
 function Menu() {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);
@@ -12,22 +12,49 @@ function Menu() {
     }
   }, []);
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    const total = cart.reduce((sum, item) => sum + item.cost * item.amount, 0);
-    localStorage.setItem('cartTotal', total.toString());
-  }, [cart]);
-function add(food, price){
+localStorage.setItem('cart', JSON.stringify(cart));
+const total = cart.reduce((sum, item) => sum + item.cost * item.amount, 0);
+localStorage.setItem('cartTotal', total.toString());
+}, [cart]);
+function add(food, price) {
     setCart((prev) => {
       const found = prev.find((item) => item.name === food);
+      let newCart;
+      let message = "";
+      let icon = "🍔"; 
       if (found) {
-        return prev.map((item) =>
-          item.name === food ? { ...item, amount: item.amount + 1 } : item
-        );
+        newCart = prev.map((item) =>
+          item.name === food ? { ...item, amount: item.amount + 1 } : item);
+        message = food + " x " + (found.amount + 1);
+      } else {
+        newCart = [...prev, { name: food, cost: price, amount: 1 }];
+        message = food + " added";
       }
-      return [...prev, { name: food, cost: price, amount: 1 }];
+      if (food.toLowerCase().includes("burger") || food.toLowerCase().includes("sandwich") || food.toLowerCase().includes("nuggets") || food.toLowerCase().includes("wings") || food.toLowerCase().includes("fries")){
+        icon = "🍔";
+      } 
+      else if(
+        food.toLowerCase().includes("sprite") ||  food.toLowerCase().includes("coke") ||  food.toLowerCase().includes("pepsi") ||  food.toLowerCase().includes("water") ||  food.toLowerCase().includes("milkshake") || food.toLowerCase().includes("Sparkling water")){
+        icon = "🥤";
+        message += " to cart";
+      } 
+      else if(
+        food.toLowerCase().includes("Mini cake") || food.toLowerCase().includes("Brownies") || food.toLowerCase().includes("Ice cream")){
+        icon = "🍰";
+        message += " to cart";
+      }
+      toast.success(message, {
+        icon,
+        duration: 2200,
+        style: {
+          borderRadius: '10px',
+          background: 'rgb(50, 53, 51)',
+          color: 'white',
+        },
+      });
+      return newCart;
     });
-  };
+}
 function remove(foodName){
     setCart((prev) => prev.filter((item) => item.name !== foodName));
   };
@@ -278,7 +305,7 @@ function renderCartContent(){
           <div className="items">
             <img src="https://i.pinimg.com/1200x/91/e6/7a/91e67abbb9f936709a58c181c031c2ba.jpg" alt="cake" />
             <p className="price">Mini cake - 109.99 Birr</p>
-            <button className="addToOrder" onClick={() => add("Cake", 109.99)}>
+            <button className="addToOrder" onClick={() => add("Mini cake", 109.99)}>
               Add to Order
             </button>
           </div>
