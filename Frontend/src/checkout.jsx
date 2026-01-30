@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link , useNavigate} from 'react-router-dom';
+import { data, Link , useNavigate} from 'react-router-dom';
 import toast from 'react-hot-toast';
 import './App.css';
 function Checkout(){
@@ -25,32 +25,46 @@ function calculateTotal(){
 function handleCheckout(event){
     event.preventDefault();
     if (cart.length === 0) {
-      alert('Your cart is empty. Please add foods or drinks or desserts to your cart first');
-      navigate('/menu');
+      toast.error("Your cart is empty");
       return;
     }
 const totalVal = calculateTotal();
 const formData = {
-    name: document.getElementById('name').value,
+    customerName: document.getElementById('name').value,
     phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
+    email: document.getElementById('email').value || "",
     address: document.getElementById('address').value,
-    notes: document.getElementById('notes').value,
+    notes: document.getElementById('notes').value || "",
     items: cart,
     total: totalVal,
 };
-toast.success("Order placed successfully\nTotal: " + totalVal.toFixed(2) + " Birr\nYour order will be delivered soon",{
-  duration: 5000,
-  style: {
-    background: ' rgb(28, 158, 82)',
-    color: 'white',
-    whiteSpace: 'pre-line', 
-  },
-  iconTheme: { primary: 'white', secondary: '#27ae60' }
-});
-    localStorage.removeItem('cart');
-    setCart([]);
-    navigate('/');
+fetch("http://localhost:5000/api/orders",{
+  method :'POST',
+  headers:{ "Content-Type":"application/json"},
+  body: JSON.stringify(formData),
+}).then(response =>{
+  if(!response.ok){
+    throw new Error("There is something wrong with the network");
+  }
+  return response.json();
+}).then(data=>{
+  toast.success("Order placed successfully\nTotal: " + totalVal.toFixed(2) + " Birr\nYour order will be delivered soon",{
+    duration: 4000,
+    style: {
+      background: ' rgb(28, 158, 82)',
+      color: 'white',
+      whiteSpace: 'pre-line', 
+    },
+    iconTheme: { primary: 'white', secondary: "rgb(39, 174, 96)" }
+  });
+  localStorage.removeItem('cart');
+  setCart([]);
+  navigate('/');
+})
+.catch(error=>{
+  console.error("Order Error found: ",error );
+  toast.error("Placing the order failed, try again later");
+}); 
 };
 let cartItemsDisplay;
   if (cart.length === 0) {
